@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>fcall_nodejs</Name>
+    <RootNamespace>fcall_nodejs</RootNamespace>
+    <NameOfLastUsedPublishProfile>node</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d0ec7ef5-6b8f-4c00-a288-29501b2021a1</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>bin\www</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="public\app\app.js" />
+    <Compile Include="public\app\controllers\CallController.js" />
+    <Compile Include="public\app\controllers\ShareScreenController.js" />
+    <Compile Include="public\content\plugins\alertifyjs\alertify.js" />
+    <Compile Include="public\content\plugins\alertifyjs\alertify.min.js" />
+    <Compile Include="public\content\plugins\bootstrap-modal\js\bootstrap-modal.js" />
+    <Compile Include="public\content\plugins\bootstrap-modal\js\bootstrap-modalmanager.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\ng-device-detector\gulpfile.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\ng-device-detector\karma.conf.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\ng-device-detector\ng-device-detector.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\ng-device-detector\ng-device-detector.min.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\re-tree\gulpfile.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\re-tree\index.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\re-tree\karma.conf.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\re-tree\re-tree.js" />
+    <Compile Include="public\content\plugins\detect-os-browser-device\re-tree\re-tree.min.js" />
+    <Compile Include="public\content\scripts\angular-cookies.min.js" />
+    <Compile Include="public\content\scripts\angular-resource.min.js" />
+    <Compile Include="public\content\scripts\angular-route.min.js" />
+    <Compile Include="public\content\scripts\angular-utf8-base64.min.js" />
+    <Compile Include="public\content\scripts\angular.min.js" />
+    <Compile Include="public\content\scripts\bootstrap.js" />
+    <Compile Include="public\content\scripts\functions.js" />
+    <Compile Include="public\content\scripts\jquery-3.1.0.min.js" />
+    <Compile Include="public\content\scripts\jquery.mCustomScrollbar.min.js" />
+    <Compile Include="public\content\scripts\publicServices.js" />
+    <Compile Include="public\content\scripts\RTCMultiConnection.min.js" />
+    <Compile Include="public\content\scripts\rtc\RTCMultiConnection.js" />
+    <Compile Include="public\content\scripts\rtc\RTCMultiConnection.min.js" />
+    <Compile Include="public\content\scripts\socket.io-1.4.5.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="bin\www" />
+    <Content Include="bin\fake-keys\certificate.pem" />
+    <Content Include="bin\fake-keys\privatekey.pem" />
+    <Content Include="public\app\views\sharescreen.html" />
+    <Content Include="web.config" />
+    <None Include="node.pubxml" />
+    <Content Include="package.json" />
+    <Content Include="public\app\views\call.html" />
+    <Content Include="public\content\css\bootstrap.css" />
+    <Content Include="public\content\css\call.css" />
+    <Content Include="public\content\css\font-awesome.css" />
+    <Content Include="public\content\css\font-awesome.min.css" />
+    <Content Include="public\content\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="public\content\css\login.css" />
+    <Content Include="public\content\css\reset.css" />
+    <Content Include="public\content\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\content\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\content\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\content\fonts\FontAwesome.otf" />
+    <Content Include="public\content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\content\plugins\alertifyjs\css\alertify.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\alertify.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\alertify.rtl.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\alertify.rtl.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\bootstrap.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\bootstrap.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\bootstrap.rtl.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\bootstrap.rtl.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\default.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\default.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\default.rtl.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\default.rtl.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\semantic.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\semantic.min.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\semantic.rtl.css" />
+    <Content Include="public\content\plugins\alertifyjs\css\themes\semantic.rtl.min.css" />
+    <Content Include="public\content\plugins\bootstrap-modal\css\bootstrap-modal-bs3patch.css" />
+    <Content Include="public\content\plugins\bootstrap-modal\css\bootstrap-modal.css" />
+    <Content Include="public\content\plugins\bootstrap-modal\img\ajax-loader.gif" />
+    <Content Include="public\content\plugins\detect-os-browser-device\ng-device-detector\.bower.json" />
+    <Content Include="public\content\plugins\detect-os-browser-device\ng-device-detector\bower.json" />
+    <Content Include="public\content\plugins\detect-os-browser-device\ng-device-detector\changelog.md" />
+    <Content Include="public\content\plugins\detect-os-browser-device\ng-device-detector\license.txt" />
+    <Content Include="public\content\plugins\detect-os-browser-device\ng-device-detector\package.json" />
+    <Content Include="public\content\plugins\detect-os-browser-device\ng-device-detector\readme.md" />
+    <Content Include="public\content\plugins\detect-os-browser-device\re-tree\.bower.json" />
+    <Content Include="public\content\plugins\detect-os-browser-device\re-tree\bower.json" />
+    <Content Include="public\content\plugins\detect-os-browser-device\re-tree\license.txt" />
+    <Content Include="public\content\plugins\detect-os-browser-device\re-tree\package.json" />
+    <Content Include="public\content\plugins\detect-os-browser-device\re-tree\readme.md" />
+    <Content Include="public\content\sound\incoming-call2.ogg" />
+    <Content Include="public\content\sound\outgoing-call-rejected.wav" />
+    <Content Include="public\content\sound\outgoing-call2.ogg" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="public\stylesheets\style.styl" />
+    <Content Include="README.md" />
+    <Content Include="typings.json" />
+    <Content Include="views\index.jade" />
+    <Content Include="views\layout.jade" />
+    <Content Include="views\error.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="bin\fake-keys\" />
+    <Folder Include="public\" />
+    <Folder Include="public\app\controllers\" />
+    <Folder Include="public\app\views\" />
+    <Folder Include="public\app\services\" />
+    <Folder Include="public\content\" />
+    <Folder Include="public\content\css\" />
+    <Folder Include="public\content\fonts\" />
+    <Folder Include="public\content\images\" />
+    <Folder Include="public\content\plugins\" />
+    <Folder Include="public\content\plugins\alertifyjs\" />
+    <Folder Include="public\content\plugins\alertifyjs\css\" />
+    <Folder Include="public\content\plugins\alertifyjs\css\themes\" />
+    <Folder Include="public\content\plugins\bootstrap-modal\" />
+    <Folder Include="public\content\plugins\bootstrap-modal\css\" />
+    <Folder Include="public\content\plugins\bootstrap-modal\img\" />
+    <Folder Include="public\content\plugins\bootstrap-modal\js\" />
+    <Folder Include="public\content\plugins\detect-os-browser-device\" />
+    <Folder Include="public\content\plugins\detect-os-browser-device\ng-device-detector\" />
+    <Folder Include="public\content\plugins\detect-os-browser-device\re-tree\" />
+    <Folder Include="public\content\scripts\" />
+    <Folder Include="public\content\scripts\rtc\" />
+    <Folder Include="public\content\sound\" />
+    <Folder Include="public\fonts\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\app\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\body-parser\" />
+    <Folder Include="typings\globals\cookie-parser\" />
+    <Folder Include="typings\globals\debug\" />
+    <Folder Include="typings\globals\express-serve-static-core\" />
+    <Folder Include="typings\globals\express\" />
+    <Folder Include="typings\globals\jade\" />
+    <Folder Include="typings\globals\mime\" />
+    <Folder Include="typings\globals\morgan\" />
+    <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\serve-favicon\" />
+    <Folder Include="typings\globals\serve-static\" />
+    <Folder Include="typings\globals\stylus\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typings\globals\body-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\cookie-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\debug\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\express-serve-static-core\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\stylus\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

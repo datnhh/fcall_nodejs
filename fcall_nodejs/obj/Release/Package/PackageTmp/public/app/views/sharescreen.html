@@ -1,0 +1,144 @@
+﻿<div class="col-xs-12">
+    <div class="row header">
+        <div class="open_left_menu">
+            <i class="fa fa-list"></i>
+        </div>
+        <div class="col-sm-5 form-inline" style="padding-left: 50px;">
+            <div class="form-group">
+                <input class="form-control input-sm" placeholder="Room ID" type="text" ng-model="roomID" />
+                <button class="btn btn-sm btn-default" data-disabled="{{IsInRoom}}" ng-click="OpenOrJoin()">Share/Join</button>
+                <a style="cursor:pointer" ng-click="CopyLink()">Link</a>
+            </div>
+
+        </div>
+        <div class="col-sm-3 text-center">
+            <h4 style="margin: 5px 0">Share Screen</h4>
+        </div>
+        <div class="col-sm-4 text-right" style="padding: 5px 10px">
+            <i class="fa fa-user"></i> User <span ng-bind="userID"></span>
+        </div>
+    </div>
+    <div class="row main-content">
+        <div class="left-menu bottom-right">
+            <ul>
+                <!-- list user in room. the user name will show here if this user join to room.
+                    this list wil restart affter add stream, disconected, join room, onleave 
+                    onstream is important event when add/remove member user in list
+                -->
+                <li class="menu_header">User in group</li>
+                <li><i class="fa fa-user"></i> <i class="fa fa-map-marker text-success"></i> User <span ng-bind="userID"></span></li>
+                <li ng-repeat="user in ListUser"><i class="fa fa-user"></i> User {{user}}</li>
+                <li class="menu_header">Setting</li>
+                <li ng-click="SwitchInputOpen()"><i class="fa fa-plug"></i> Camera/Audio setting </li>
+                <li><i class="fa fa-unlock"></i> Log out</li>
+            </ul>
+        </div>
+        <div class="col-sm-12 right-content" style="min-height: 500px">            
+            <!--<div class="item-video" ng-repeat="n in [1,2,3]">
+                <span class="item-video-name">User n</span>
+                <span class="item-video-expand"><i class="fa fa-expand"></i></span>
+                <video></video>
+                <div class="item-video-control">
+                    <button ng-click="Mute(n)"><i class="fa fa-microphone"></i></button>
+                    <button ng-click="Vol(n)"><i class="fa fa-volume-up"></i></button>
+                </div>
+            </div>-->
+
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col-sm-12 text-center">
+            <div class="control-btn" ng-click="ShareScreen()">
+                <i class="fa fa-desktop"></i><br />
+                <span>Video Call</span>
+            </div>
+            <!--<div class="control-btn" ng-click="OffVideo()">
+                <i class="fa fa-video-camera"></i><br />
+                <span>Video</span>
+            </div>
+            <div class="control-btn" ng-click="Mute()">
+                <i class="fa fa-microphone"></i><br />
+                <span>Mute</span>
+            </div>-->
+            <div class="control-btn" ng-click="DisconnectRoom()" title="Disconnect">
+                <i class="fa fa-phone"></i><br />
+                <span>Off</span>
+            </div>
+        </div>
+        <div class="col-sm-3 text-right" style="position:absolute; bottom: 10px; right: 10px;">
+            <a href="#/">Help</a> |
+            <a href="#/">Term</a> |
+            <a href="#/">Power by</a>
+        </div>
+    </div>
+</div>
+<div class="hidden">
+    <div id="SwitchInput">
+        <fieldset>
+            <label for="AudioDevice">Audio</label>
+            <select id="AudioDevice" class="form-control input-sm"></select>
+            <label for="VideoDevice">Video</label>
+            <select id="VideoDevice" class="form-control input-sm"></select>
+            <button class="btn btn-success" ng-click="SwitchInput()">Switch</button> <button class="btn btn-default ajs-close" onclick="alertify.genericDialog().close();">Close</button>
+        </fieldset>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    var _open_left_menu = false;
+    $('.open_left_menu').click(function (event) {
+        event.stopPropagation();
+        if (!_open_left_menu) {
+            $('.left-menu').animate({ "margin-left": '+=230' });
+            //$('.right-content').css('margin-right', '-230px');
+            $('.right-content').animate({ "width": '-=230' });
+            _open_left_menu = true;
+        } else {
+            //$('.right-content').css('margin-right', '0px');
+            $('.right-content').animate({ "width": '+=230' });
+            $('.left-menu').animate({ "margin-left": '-=230' });
+            _open_left_menu = false;
+        }
+    });
+    $(document).on("click", "body", function (event) {
+        event.preventDefault();
+        //$(event.target).is('.open_left_menu')
+
+        if (_open_left_menu) {
+            //$('.right-content').css('margin-right', '0px');
+            $('.right-content').animate({ "width": '+=230' });
+            $('.left-menu').animate({ "margin-left": '-=230' });
+            _open_left_menu = false;
+        }
+    });
+
+    $(document).ready(function () {
+        setConfig();
+
+    });
+
+    function setConfig() {
+        var _header = $('.header').outerHeight();
+        var _footer = $('.footer').outerHeight();
+        var _window = $(window).height();
+        var _video = _window - _header - _footer;
+        $('.main-content').height(_video);
+        $('.right-content').height(_video);
+        $('.left-menu').height(_video);
+        //console.log('h - f - w - v:', _header, _footer, _window, _video);
+
+        var _w_content = $(window).width() - 30;
+        if ($('.left-menu').css("margin-left") == "0px") {
+            _w_content = _w_content - 230;
+        }
+        $('.right-content').width(_w_content);
+        //console.log('w - c: ', _w_content);
+    }
+
+    window.onresize = function (event) {
+        setConfig();
+    };
+</script>

@@ -1,0 +1,2 @@
+D:\FCall2\Trunk\src\fcall_nodejs\fcall_nodejs\bin\Microsoft.NodejsTools.WebRole.dll
+D:\FCall2\Trunk\src\fcall_nodejs\fcall_nodejs\obj\Release\fcall_nodejs.njsprojResolveAssemblyReference.cache

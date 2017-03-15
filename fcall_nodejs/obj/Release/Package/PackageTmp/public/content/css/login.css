@@ -1,0 +1,174 @@
+/*
+ * Specific styles of signin component
+ */
+/*
+ * General styles
+ */
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 4%, rgba(209,209,209,1) 99%, rgba(254,254,254,1) 100%);
+}
+
+.card-container.card {
+    width: 350px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;    
+    margin: 0 auto 25px;
+    margin-top: 50px;    
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;    
+}
+
+.profile-img-card {
+    max-width: 350px;    
+    margin: 0 auto;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;    
+}
+.btn-lock{
+    background: gray !important;
+    cursor: not-allowed !important;
+}
+.btn.btn-signin {    
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    color: white;    
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+    opacity: 0.9;
+    border-radius: 18px;
+    background-image: url(/content/images/btn_login.png);    
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size:cover;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    opacity: 1;
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+ 
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+@media (max-width: 768px) {
+    .card-container.card {
+        width: 90%;
+        margin-top: 20px;
+    }
+}
+.Login_Page {
+    height: 100%; 
+    background-image: url(/content/images/bg-lg.jpg);
+    background-size:cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.card-container {
+ background-color: transparent;
+ box-shadow: none;   
+}
+.input-login-group {
+    position: relative;
+}
+.input-login-group img {
+    position: absolute;
+    top: 5px; left: 5px;
+    z-index: 2;
+    color: red;
+    font-size: 25px;
+    width: 25px;
+
+}
+
+.text-field {
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #666;
+    padding-left: 40px;
+    box-shadow: none;
+    color: #000;
+    height: 44px;
+    border-radius: 0;
+}
